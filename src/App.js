@@ -1,7 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
+
+import randomData from './data/randomData'
 
 function App() {
+  let result = ''
+  for (let i = 0; i < 20; i++) {
+    let r = Math.floor(Math.random() * 62)
+    result += randomData[r]
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +25,10 @@ function App() {
         >
           Learn React
         </a>
+        <section>{result}</section>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
