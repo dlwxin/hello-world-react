@@ -1,0 +1,21 @@
+.git
+.github
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+*.md
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# build output
+dist/
+buid/
+
+# Dependency directories
+node_modules/
