@@ -1,15 +1,16 @@
 import logo from './logo.svg'
 import './App.css'
-
-import randomData from './data/randomData'
+import React, { useEffect, useState } from 'react'
 
 function App() {
-  let result = ''
-  for (let i = 0; i < 20; i++) {
-    let r = Math.floor(Math.random() * 62)
-    result += randomData[r]
-  }
+  const [data, setData] = useState([])
 
+  useEffect(() => {
+    fetch('http://localhost:8080/')
+      .then(response => response.text())
+      .then(data => setData(data))
+      .catch(error => console.error(error))
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
@@ -25,7 +26,8 @@ function App() {
         >
           Learn React
         </a>
-        <section>{result}</section>
+        <br></br>
+        {data}
       </header>
     </div>
   )
