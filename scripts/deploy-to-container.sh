@@ -13,7 +13,7 @@ if [[ $VERSION == '' ]]; then
 fi
 APP_NAME=hello-world-react
 IMAGE_TAG=$APP_NAME:$VERSION
-PORT_MAPPING=3000:3000
+PORT_MAPPING=3000:80
 
 function doUsage() {
   echo "Usage: $SCRIPT_NAME [version]"
