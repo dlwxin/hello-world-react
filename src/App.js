@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8080/')
+    fetch('http://localhost:8080/api/hash')
       .then(response => response.text())
       .then(data => setData(data))
       .catch(error => console.error(error))
