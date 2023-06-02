@@ -9,7 +9,10 @@ function App() {
     fetch('http://localhost:8080/api/hash')
       .then(response => response.text())
       .then(data => setData(data))
-      .catch(error => console.error(error))
+      .catch(error => {
+        console.error(error)
+        setData('LOCAL' + Math.random().toString(36).substring(5))
+      })
   }, [])
   return (
     <div className="App">
@@ -26,8 +29,7 @@ function App() {
         >
           Learn React
         </a>
-        <br></br>
-        {data}
+        <h1> {data} </h1>
       </header>
     </div>
   )
